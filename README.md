@@ -7,7 +7,11 @@
 ## Getting Started
 1. Clone repository
 2. Open `graphic.sas` in SAS
-3. Run file as is
+3. Edit the following line of code so that it contains your computer's appropriate directory (Directory should contain all files cloned from repository)
+```
+%let directory = C:\Users\arthu\Documents\GitHub\NBA-data-analysis-2014-2015;
+```
+3. Run file
 4. View results in SAS
 
 ## Modifications

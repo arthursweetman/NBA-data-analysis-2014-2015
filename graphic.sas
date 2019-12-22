@@ -1,20 +1,27 @@
 /* graphic.sas
 
 Author:		Arthur Sweetman
-Directory:	M:\STA 402\final-project
 Purpose:	Create useful graphics illustrating the distribution
 			of shot distances in the 2014-2015 NBA season (can be
-			filtered by player name, team name, and date of the game).
+			filtered by player name, team name, and date).
 */
+
+%let directory = C:\Users\arthu\Documents\GitHub\NBA-data-analysis-2014-2015;
 
 %macro plotshots20142015nba (playername=, teamname= , gamedate=);
 
-libname proj "M:\STA 402\final-project";
+libname proj "&directory";
+
+proc import datafile="&directory\shot_logs.csv"
+	out=proj.shotlogs
+	dbms=csv
+	;
+run;
 
 /* This data step is used to draw the basketball court
 	(not including the curved 3-point lines) */
 data courtlines;
-	infile "M:\STA 402\final-project\courtanno.txt" expandtabs pad;
+	infile "&directory\courtanno.txt" expandtabs pad;
 	retain drawspace "datavalue" linecolor "black";
 	input function $9. x1 y1 x2 y2 height width anchor $10.;
 run;
