@@ -1,7 +1,8 @@
 # NBA-data-analysis-2014-2015
 
 ## Prerequisites
-1. Must have SAS installed
+1. Open and review [Report_final.pdf](https://github.com/arthursweetman/NBA-data-analysis-2014-2015/blob/master/Report_final.pdf)
+2. Must have SAS installed
 
 ## Getting Started
 1. Clone repository
